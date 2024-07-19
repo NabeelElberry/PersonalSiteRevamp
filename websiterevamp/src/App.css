@@ -1,0 +1,50 @@
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+.backgroundDiv {
+  overflow: hidden;
+}
+.backgroundDiv p {
+  transition: transform 0.15s ease-in-out;
+}
+
+.mr-half {
+  margin-right: 50%;
+}
+
+.dynamic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.pfp {
+  width: 36rem;
+  height: 36rem;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.backgroundDiv pre {
+  transform: rotate(-30deg);
+  line-height: 0.7;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hello {
+  -xyz-duration: 10s;
+}
+
+.backgroundDiv:hover pre {
+  opacity: 20%;
+}
