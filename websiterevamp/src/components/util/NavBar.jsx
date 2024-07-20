@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 export default function NavBar({ style }) {
   return (
     <div className={`${style} flex items-center justify-evenly drop-shadow-xl`}>
-      <Link to="/">
-        <MenuIcon text="NE" />
+      <Link to="/" className="">
+        <MenuIcon text="Home" />
       </Link>
       <Link to="/about">
-        <MenuIcon text="AB" />
+        <MenuIcon text="About Me" />
       </Link>
       <Link to="/projects">
-        <MenuIcon text="PR" />
+        <MenuIcon text="Projects" />
       </Link>
     </div>
   );

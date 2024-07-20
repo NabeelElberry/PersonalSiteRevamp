@@ -18,8 +18,8 @@ export default function Dropdown({ title, children }) {
   const [visible, setVisible] = useState(false);
   return (
     <div>
-      <motion.div className="flex flex-row justify-center items-center text-2xl space-x-2">
-        <p>{title}</p>
+      <motion.div className="flex flex-row justify-center text-center items-center text-2xl space-x-2">
+        <p className="text-center">{title}</p>
         <motion.button
           initial="initial"
           animate={controls}

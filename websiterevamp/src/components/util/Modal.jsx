@@ -43,7 +43,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         }}
         className="
         flex flex-col
-        size-32r m-2 bg-slate-400 p-2 
+        size-32r m-2 p-2 
         items-center rounded-3xl 
          justify-center"
       >

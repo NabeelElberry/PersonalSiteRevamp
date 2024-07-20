@@ -9,6 +9,9 @@ import pacman from "../assets/pacman.png";
 import ocaml from "../assets/Ocaml.png";
 import C from "../assets/C_Logo.png";
 import insta from "../assets/insta.png";
+import letstalk from "../assets/letstalk.png";
+import websec from "../assets/websec.png";
+import racket from "../assets/racket.png";
 import Modal from "../components/util/Modal.jsx";
 import ModalReturn from "../components/ModalReturn.jsx";
 import Divider from "../components/util/Divider.jsx";
@@ -44,14 +47,16 @@ import {
   NextjsOriginal,
   MysqlOriginal,
   MongodbOriginal,
+  FirebaseOriginal,
 } from "devicons-react";
 import Skill from "../components/SkillSection.jsx";
 import SkillSection from "../components/SkillSection.jsx";
+import Footer from "../components/util/Footer.jsx";
 
 export default function ProjectsPage() {
   const animationRef = useRef();
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(0);
   const handleClose = () => {
     setOpen(false);
   };
@@ -83,14 +88,23 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <div className="proj pb-10 bg-gradient-to-b from-[#a34141] to-[#e47070]">
+    <div
+      className="proj bg-gradient-to-b 
+    
+    
+    bg-gray-900"
+    >
       <NavBarSecondary extraStyle={"animate-slideDown pb-2 pt-2"} />
       <div className="w-screen h-screen flex flex-col items-center justify-center">
         <img src={github} className="pb-5 animate-rotateIn" />
-        <p className="text-5xl animate-fadein">PROJECTS</p>
+        <p className="text-5xl animate-fadein">
+          <u>
+            <strong>PROJECTS</strong>
+          </u>
+        </p>
       </div>
       <Divider />
-      <div className="flex flex-col items-center">
+      <div className="flex-col flex items-center justify-center space-y-4">
         <SkillSection
           title="Languages"
           array={[
@@ -122,8 +136,10 @@ export default function ProjectsPage() {
             <Icon icon={<IntellijOriginal size="50" />} />,
             <Icon icon={<MysqlOriginal size="50" />} />, // Blue
             <Icon icon={<MongodbOriginal size="50" />} />, // Multicolor
+            <Icon icon={<FirebaseOriginal size="50" />} />, // Multicolor
             <Icon icon={<TailwindcssOriginal size="50" />} />, // Multicolor
             <Icon icon={<MaterialuiOriginal size="50" />} />, // Multicolor
+
             // Multicolor
           ]}
         />
@@ -131,55 +147,77 @@ export default function ProjectsPage() {
 
       <Divider />
       <div className="p-30 w-full grid md:grid-cols-2 lg:grid-cols-3 lg:pl-24 lg:pr-24 auto-cols-auto items-center  justify-items-center">
-        <button onClick={() => handleOpen("rymn")}>
+        <button onClick={() => handleOpen(6)}>
           <ProjectItem
-            title="RYMN"
-            text="A research based vocabulary practicing tool."
+            title="LetsTalk"
+            text="Connecting language learners globally"
+            image={letstalk}
+          />
+        </button>
+        <button onClick={() => handleOpen(0)}>
+          <ProjectItem
+            title="Rymn"
+            text="Research-based vocabulary tool"
             image={rymn}
           />
         </button>
-        <button onClick={() => handleOpen("weather")}>
+        <button onClick={() => handleOpen(1)}>
           <ProjectItem
-            title="WEATHERIFY"
-            text="Weather app with interesting statistics"
+            title="Weatherify"
+            text="Insightful weather statistics"
             image={weather}
           />
         </button>
-        <button onClick={() => handleOpen("pacman")}>
+        <button onClick={() => handleOpen(8)}>
+          <ProjectItem
+            title="Custom Built Compiler"
+            text="Custom built advanced Racket compiler features "
+            image={racket}
+          />
+        </button>
+        <button onClick={() => handleOpen(2)}>
           <ProjectItem
             title="PacMan AI"
             text="AI Trained PacMan solves any maze"
             image={pacman}
           />
         </button>
-        <button onClick={() => handleOpen("ocaml")}>
+        <button onClick={() => handleOpen(3)}>
           <ProjectItem
             title="MicrOCaml Compiler"
-            text="Parser, lexer, and interpreter for OCaml language"
+            text="OCaml parser, lexer, and interpreter"
             image={ocaml}
           />
         </button>
-        <button onClick={() => handleOpen("ournix")}>
+        <button onClick={() => handleOpen(4)}>
           <ProjectItem
             title="Ournix OS "
-            text="Simulation of C operating system"
+            text="Simulated C operating system"
             image={C}
           />
         </button>
-        <button onClick={() => handleOpen("insta")}>
+        <button onClick={() => handleOpen(5)}>
           <ProjectItem
             title="BetterInsta"
             text="Instagram statistics for user analysis"
             image={insta}
           />
         </button>
+        <button onClick={() => handleOpen(7)}>
+          <ProjectItem
+            title="Security Attacks"
+            text="Securing sites from vulnerabilities"
+            image={websec}
+          />
+        </button>
       </div>
 
       <Modal isOpen={open} onClose={handleClose}>
         <div>
-          <ModalReturn title={selected} />
+          <ModalReturn number={selected} />
         </div>
       </Modal>
+      <Footer />
     </div>
   );
 }

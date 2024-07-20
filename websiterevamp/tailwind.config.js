@@ -109,7 +109,7 @@ export default {
         twospacity: "longpacity 1s ease",
         shortpacity: "custompacity 1s ease",
         bounce: "bounce 2s infinite",
-        longpacityBounce: "longpacity 5s ease-in, bounce 2s infinite",
+        longpacityBounce: "longpacity 2s ease-in, bounce 2s infinite",
         slideRight: "slideRight 1.5s ease, custompacity 1.5s ease",
         slideRightBack: "slideRightBack 1.5s ease, custompacityrev 1.5s ease",
         slideUp: "slideUp 2s easeInOut",

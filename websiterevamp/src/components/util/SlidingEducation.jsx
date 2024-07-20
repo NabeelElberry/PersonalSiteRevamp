@@ -86,10 +86,8 @@ export default function SlidingEducation({
           />
 
           <div className="flex flex-col justify-center text-center grow items-center">
-            <motion.p variants={textVariants} className="text-3xl">
-              <u>
-                <strong>{title}</strong>
-              </u>
+            <motion.p variants={textVariants} className="text-3xl underline">
+              <strong>{title}</strong>
             </motion.p>
             <motion.p variants={textVariants} className="text-3xl">
               {degree}

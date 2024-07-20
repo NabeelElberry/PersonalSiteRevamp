@@ -86,10 +86,8 @@ export default function SlidingExperience({
           />
 
           <div className="flex flex-col justify-center text-center grow items-center">
-            <motion.p variants={textVariants} className="text-4xl">
-              <u>
-                <strong>{company}</strong>
-              </u>
+            <motion.p variants={textVariants} className="font-bold text-4xl">
+              {company}
             </motion.p>
             <motion.p variants={textVariants} className="text-3xl">
               {title}

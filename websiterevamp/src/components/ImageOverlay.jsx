@@ -12,9 +12,8 @@ export default function ImageOverlay() {
         text-4xl
         mb-60`}
     >
-      <p className="t1">Hi! Welcome to my portfolio.</p>
-      <p className="t2 pb-10">I hope you enjoy it!</p>
-      <img src={downarrow} className="size-36 animate-longpacityBounce" />
+      <p className="t1 pb-4">Hi! Welcome to my portfolio.</p>
+      <img src={downarrow} className="size-24 animate-longpacityBounce" />
     </div>
   );
 }

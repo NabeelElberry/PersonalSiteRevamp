@@ -4,6 +4,7 @@ import NavBar from "../components/util/NavBar";
 import { useIsVisible } from "../components/hooks/IsVisible";
 import BackgroundItem from "../components/BackgroundItem";
 import { Link } from "react-router-dom";
+import Footer from "../components/util/Footer";
 export default function HomePage() {
   const navref = useRef(null);
   const ref1 = useRef(null);
@@ -20,9 +21,10 @@ export default function HomePage() {
       <ImageOverlay />
       <NavBar
         ref={navref}
-        style={`w-16
+        style={`w-16 lg:w-24
                 h-full absolute justify-center items-center
                 flex-col rounded-r-lg bg-white z-20  
+                
                 ${
                   isVisibleNav
                     ? " animate-slideRight"
@@ -60,6 +62,7 @@ export default function HomePage() {
           </div>
         </Link>
       </div>
+      <Footer />
     </>
   );
 }

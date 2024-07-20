@@ -11,6 +11,7 @@ export default function ProjectItem({ title, text, link, image }) {
       controls.start("visible");
     }
   }, [controls, isInView]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -30,20 +31,24 @@ export default function ProjectItem({ title, text, link, image }) {
       }}
       className="baby:w-96 w-80 h-64 
       drop-shadow-2xl
-      hover:cursor-pointer bg-gradient-to-b from-slate-900 to-slate-700 
+      hover:cursor-pointer bg-gradient-to-b 
       flex-col flex mb-4
       rounded-2xl"
     >
-      <div className="p-2 w-full flex h-6 bg-red-500 rounded-t-2xl drop-shadow-2xl space-x-1 items-center ">
-        <p className="mr-auto">{title}</p>
-        <div className="circle rounded-full drop-shadow-2xl size-5 bg-green-200"></div>
-        <div className="circle rounded-full drop-shadow-2xl size-5 bg-yellow-200"></div>
-        <div className="circle rounded-full drop-shadow-2xl size-5 bg-red-200"></div>
+      <div className="p-2 w-full flex h-6 bg-gradient-to-b bg-gray-800 rounded-2xl drop-shadow-2xl space-x-1 items-center ">
+        <p className="mr-auto text-[#E0E0E0]">
+          <strong>{title}</strong>
+        </p>
+        <div className="circle rounded-full drop-shadow-2xl size-5 bg-green-400"></div>
+        <div className="circle rounded-full drop-shadow-2xl size-5 bg-yellow-400"></div>
+        <div className="circle rounded-full drop-shadow-2xl size-5 bg-red-400"></div>
       </div>
-      <div className="flex  w-full h-full pr-2 pl-2 items-center">
-        <img src={image} className="size-36 m-2 rounded-2xl" />
+      <div className="flex w-full h-full bg-gradient-to-b bg-gray-700 pr-2 pl-2 items-center">
+        <img src={image} className="size-36 m-2 rounded-lg" />
         <div className="flex-col flex items-center">
-          <p className="text-center text-3xl">{text}</p>
+          <p className="text-center text-3xl font-semibold text-[#E0E0E0]">
+            {text}
+          </p>
         </div>
       </div>
     </motion.div>

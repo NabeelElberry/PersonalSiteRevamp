@@ -28,7 +28,7 @@ export default function Divider() {
       }}
       className="flex p-10 items-center w-full h-full justify-center"
     >
-      <div className="w-96 h-2 rounded-2xl bg-slate-200" />
+      <div className="baby:w-96 w-80 h-2 rounded-2xl bg-slate-200" />
     </motion.div>
   );
 }

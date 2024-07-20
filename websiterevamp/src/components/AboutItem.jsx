@@ -23,7 +23,7 @@ export default function AboutItem({ children, style }) {
           y: 0,
         },
       }}
-      className={`flex flex-col items-center bg-cyan-600 drop-shadow-2xl transition ease-in-out rounded-2xl  
+      className={`flex flex-col items-center bg-[#212835] drop-shadow-2xl transition ease-in-out rounded-2xl  
         justify-center lg:w-comp lg:p-4 lg:pl-14 pb-10 ${style}`}
     >
       {children}

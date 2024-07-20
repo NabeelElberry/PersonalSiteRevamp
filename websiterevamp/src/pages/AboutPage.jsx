@@ -15,40 +15,26 @@ import Dropdown from "../components/util/Dropdown";
 import SlidingEducation from "../components/util/SlidingEducation";
 import SlidingExperience from "../components/util/SlidingExperience";
 import staples from "../assets/staples.png";
-export default function AboutPage() {
-  const animationRef = useRef(null);
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const refText = useRef(null);
-  const isVisibleText = useIsVisible(refText);
-  const isVisible1 = useIsVisible(ref1);
-  const isVisible2 = useIsVisible(ref2);
-  const isVisible3 = useIsVisible(ref3);
+import Footer from "../components/util/Footer";
+import { motion, useInView, useAnimation } from "framer-motion";
+import Facts from "../components/util/Facts";
 
+export default function AboutPage() {
+  const ref = useRef(null);
+  const isVisible = useInView(ref, { once: true });
+  const controls = useAnimation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    const onAnimationEnd = () => {
-      animationRef.current?.classList.add("opacity-100");
-    };
-
-    const refs = [animationRef, ref1, ref2, ref3, refText];
-    refs.forEach((ref) => {
-      ref.current?.addEventListener("animationend", onAnimationEnd);
-    });
-
-    return () => {
-      refs.forEach((ref) => {
-        ref.current?.removeEventListener("animationend", onAnimationEnd);
-      });
-    };
-  }, []);
+    if (isVisible) {
+      controls.start("visible");
+    }
+  }, [isVisible, controls]);
 
   return (
-    <div className="abt bg-gradient-to-b from-[#43778b] to-[#5393ac]">
+    <div className="abt bg-gradient-to-b bg-gray-900">
       <NavBarSecondary extraStyle="animate-slideDown pb-2 pt-2" />
       <div className="flex flex-col lg:flex-row lg:space-x-32 items-center justify-center grow w-full h-screen">
         <img
@@ -58,7 +44,9 @@ export default function AboutPage() {
         />
 
         <div className="flex flex-col size-72 items-center justify-center">
-          <div className="text-center text-4xl">My name is Nabeel Elberry.</div>
+          <div className="text-center text-4xl font-extrabold">
+            My name is Nabeel Elberry.
+          </div>
           <div class="group text-white text-xl transition duration-300">
             I'm a full stack developer.
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
@@ -67,22 +55,89 @@ export default function AboutPage() {
       </div>
       <div className="flex flex-col items-center justify-center space-y-16">
         <Divider />
-        <p
-          ref={refText}
-          className={`mb-28 text-4xl lg:text-6xl ${
-            isVisibleText
-              ? "animate-shortpacity opacity-100"
-              : "animate-fadeout opacity-0"
-          }`}
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          transition={{
+            duration: 1,
+            type: "spring",
+            bounce: 0.3,
+          }}
+          variants={{
+            hidden: {
+              scale: 0,
+            },
+            visible: {
+              scale: 1,
+              transition: {
+                type: "spring",
+                bounce: 0.3,
+                duration: 1,
+              },
+            },
+          }}
+          ref={ref}
+          className={`mb-28 text-3xl baby:4xl lg:text-6xl`}
         >
           Here's a bit about me<span className="animate-fadeInOut">...</span>
-        </p>
+        </motion.p>
+
+        <Facts>
+          <p className="text-5xl font-bold pb-5">Fun Facts!</p>
+          <p className="pb-2 text-2xl font-semibold text-center">
+            I am a passionate software engineer looking for full stack
+            opportunities. I have experience in Data Science, Machine Learning,
+            and many other aspects of Computer Science.
+          </p>
+          <Divider />
+          <div className="flex flex-row items-center pb-2">
+            <img src={languages} className="size-20 rounded-full mr-2" />
+            <div>
+              <p className="">
+                When I'm not coding, you can find me learning languages! I
+                really enjoy language learning as I feel it allows you to
+                connect to the culture on a different level. Currently I'm
+                learning Japanese, Mandarin Chinese, and French, I dabble in
+                many more languages though!
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-row items-center">
+            <div>
+              <p className="text-center">
+                I also weightlift, do calisthenics, and climb!
+              </p>
+              <Dropdown title="Current Stats">
+                <div>
+                  <strong>V4 Climber</strong>
+                </div>
+                <div>
+                  <strong>Bench Press: </strong> 185lb
+                </div>
+                <div>
+                  <strong>Weighted pull-up:</strong> 65lbs - 5 reps
+                </div>
+                <div>
+                  <strong>Handstand Push Up (Wall Assisted):</strong> 10 reps
+                </div>
+                <div>
+                  <strong>Muscle Up</strong> ✅
+                </div>
+                <div>
+                  <strong>Front Lever</strong> ✅
+                </div>
+                <div>
+                  <strong>Advanced Tuck Planche</strong> ⏳
+                </div>
+              </Dropdown>
+            </div>
+            <img src={frontlever} className="size-20 rounded-full" />
+          </div>
+        </Facts>
 
         <div className="flex justify-center items-center  flex-col m-2 space-y-4  rounded-3xl drop-shadow-2xl ">
           <AboutItem className="flex flex-col items-center justify-center  mr-2 ">
-            <p className="text-5xl pb-5 mt-5">
-              <u>EDUCATION</u>
-            </p>
+            <p className="text-5xl font-bold pb-5 mt-5 underline">EDUCATION</p>
             <div className="flex flex-row">
               <SlidingEducation
                 title="University of Maryland, College Park"
@@ -103,9 +158,7 @@ export default function AboutPage() {
             </div>
           </AboutItem>
           <AboutItem className="flex flex-col items-center justify-center pl-2 ml-2">
-            <p className="text-5xl pb-5 mt-5">
-              <u>EXPERIENCE</u>
-            </p>
+            <p className="text-5xl pb-5 font-bold mt-5 underline">EXPERIENCE</p>
 
             <SlidingExperience
               company="UMD: Terrapin Technology"
@@ -116,15 +169,34 @@ export default function AboutPage() {
               <Dropdown title="Description">
                 <ol className="list-disc list-inside">
                   <li>
-                    Worked collaboratively with colleagues to efficiently
-                    resolve technical issues with students' personal devices,
-                    encompassing virus removal, software installation, and
-                    diagnosis and resolution of hardware issues.
+                    Resolved technical issues and provided support for various
+                    operating systems including but not limited to{" "}
+                    <u>
+                      <strong>
+                        Windows, Linux, MacOS, and Google ChromeOS
+                      </strong>
+                    </u>{" "}
+                    to ensure smooth operation and user satisfaction.
                   </li>
                   <li>
-                    Facilitated communication among team members and utilized
-                    ServiceNow to meticulously document customer issues across
-                    various departments for streamlined workflow.
+                    Utilize{" "}
+                    <strong>
+                      <u>ServiceNow</u>
+                    </strong>{" "}
+                    to document procedures and provide effective communication
+                    with a{" "}
+                    <u>
+                      <strong>96% solution rate</strong>
+                    </u>
+                    .
+                  </li>
+                  <li>
+                    Assist{" "}
+                    <strong>
+                      <u>100+ students and faculty</u>
+                    </strong>{" "}
+                    daily with high quality technical assistance for a wide
+                    variety of devices
                   </li>
                 </ol>
               </Dropdown>
@@ -169,15 +241,19 @@ export default function AboutPage() {
               <Dropdown title="Description">
                 <ul className="list-disc list-inside">
                   <li>
-                    Worked collaboratively with colleagues to efficiently
-                    resolve technical issues with students' personal devices,
-                    encompassing virus removal, software installation, and
-                    diagnosis and resolution of hardware issues.
+                    Managed cash handling duties including processing
+                    transactions, giving change, and balancing register at the
+                    end of the shift.
                   </li>
                   <li>
-                    Facilitated communication among team members and utilized
-                    ServiceNow to meticulously document customer issues across
-                    various departments for streamlined workflow.
+                    Maintained efficient and organized shelves by restocking
+                    products, rotating inventory, and ensuring proper product
+                    placement.
+                  </li>
+                  <li>
+                    Provided exceptional customer service by addressing
+                    inquiries, resolving complaints, and enhancing overall
+                    shopping experience.
                   </li>
                 </ul>
               </Dropdown>
@@ -185,6 +261,7 @@ export default function AboutPage() {
           </AboutItem>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
