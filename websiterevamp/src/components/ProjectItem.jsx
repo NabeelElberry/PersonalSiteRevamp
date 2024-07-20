@@ -35,7 +35,7 @@ export default function ProjectItem({ title, text, link, image }) {
       flex-col flex mb-4
       rounded-2xl"
     >
-      <div className="p-2 w-full flex h-6 bg-gradient-to-b bg-gray-800 rounded-2xl drop-shadow-2xl space-x-1 items-center ">
+      <div className="p-2 w-full flex h-6 bg-gradient-to-b bg-gray-800 rounded-t-2xl drop-shadow-2xl space-x-1 items-center ">
         <p className="mr-auto text-[#E0E0E0]">
           <strong>{title}</strong>
         </p>

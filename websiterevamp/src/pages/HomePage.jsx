@@ -24,7 +24,7 @@ export default function HomePage() {
         style={`w-16 lg:w-24
                 h-full absolute justify-center items-center
                 flex-col rounded-r-lg bg-white z-20  
-                
+               
                 ${
                   isVisibleNav
                     ? " animate-slideRight"
@@ -32,7 +32,7 @@ export default function HomePage() {
                 }`}
       />
 
-      <div className="flex flex-col md:flex-row sm:flex-col w-full h-full ">
+      <div className="flex flex-col md:flex-row sm:flex-col -z-10  h-full ">
         <Link
           style={{ color: "inherit", textDecoration: "inherit" }}
           className="flex grow"
