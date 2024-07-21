@@ -19,48 +19,49 @@ export default function HomePage() {
   return (
     <>
       <ImageOverlay />
-      <NavBar
-        ref={navref}
-        style={`w-16 lg:w-24
-                h-full absolute justify-center items-center
-                flex-col rounded-r-lg bg-white z-20  
-               
-                ${
-                  isVisibleNav
-                    ? " animate-slideRight"
-                    : "animate-slideRightBack opacity-0"
-                }`}
-      />
-
-      <div className="flex flex-col md:flex-row sm:flex-col -z-10  h-full ">
-        <Link
-          style={{ color: "inherit", textDecoration: "inherit" }}
-          className="flex grow"
-          to="/about"
-        >
-          <div
-            ref={ref1}
-            className={`flex grow ease-in duration-700 ${
-              isVisible1 ? "animate-shortpacity opacity-100" : "opacity-0"
-            }`}
+      <div className="h-full">
+        <NavBar
+          ref={navref}
+          style={`w-16 lg:w-24
+                  h-full absolute justify-center items-center
+                  flex-col rounded-r-lg bg-white z-20
+        
+                  ${
+                    isVisibleNav
+                      ? " animate-slideRight"
+                      : "animate-slideRightBack opacity-0"
+                  }`}
+        />
+        <div className="flex flex-col md:flex-row sm:flex-col -z-10 w-full h-full ">
+          <Link
+            style={{ color: "inherit", textDecoration: "inherit" }}
+            className="flex h-full grow"
+            to="/about"
           >
-            <BackgroundItem title="ABOUT ME" backgroundImage="about" />
-          </div>
-        </Link>
-        <Link
-          to="/projects"
-          style={{ color: "inherit", textDecoration: "inherit" }}
-          className="flex grow"
-        >
-          <div
-            ref={ref2}
-            className={`flex grow ease-in duration-700 ${
-              isVisible2 ? "animate-shortpacity opacity-100" : "opacity-0"
-            }`}
+            <div
+              ref={ref1}
+              className={`flex grow ease-in h-full duration-700 ${
+                isVisible1 ? "animate-shortpacity opacity-100" : "opacity-0"
+              }`}
+            >
+              <BackgroundItem title="ABOUT ME" backgroundImage="about" />
+            </div>
+          </Link>
+          <Link
+            to="/projects"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+            className="flex grow"
           >
-            <BackgroundItem title="PROJECTS" backgroundImage="projects" />
-          </div>
-        </Link>
+            <div
+              ref={ref2}
+              className={`flex grow ease-in duration-700 ${
+                isVisible2 ? "animate-shortpacity opacity-100" : "opacity-0"
+              }`}
+            >
+              <BackgroundItem title="PROJECTS" backgroundImage="projects" />
+            </div>
+          </Link>
+        </div>
       </div>
       <Footer />
     </>

@@ -6,6 +6,7 @@ export default function BackgroundItem({ title, backgroundImage }) {
                         text-wrap text-4xl 
                         border-2 rounded-lg z-10 
                         backgroundDiv 
+                        h-full
                         transition ease-in-out hover:cursor-pointer duration-500 relative`);
 
   useEffect(() => {
