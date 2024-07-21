@@ -115,7 +115,7 @@ export default function AboutPage() {
                   <strong>Bench Press: </strong> 185lb (need to retest)
                 </div>
                 <div>
-                  <strong>Pull up max:</strong> 19 clean form (need to retest)
+                  <strong>Pull up max:</strong> 21 clean form
                 </div>
                 <div>
                   <strong>Weighted pull-up:</strong> 65lbs - 5 reps
