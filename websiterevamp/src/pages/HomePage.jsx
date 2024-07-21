@@ -24,7 +24,7 @@ export default function HomePage() {
           ref={navref}
           style={`w-16 lg:w-24
                   h-full absolute justify-center items-center
-                  flex-col rounded-r-lg bg-white z-20
+                  flex flex-col rounded-r-lg bg-white z-20
         
                   ${
                     isVisibleNav
@@ -35,7 +35,7 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row sm:flex-col -z-10  h-full ">
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
-            className="flex grow"
+            className="flex h-full grow"
             to="/about"
           >
             <div
@@ -50,7 +50,7 @@ export default function HomePage() {
           <Link
             to="/projects"
             style={{ color: "inherit", textDecoration: "inherit" }}
-            className="flex grow"
+            className="flex  h-full  grow"
           >
             <div
               ref={ref2}

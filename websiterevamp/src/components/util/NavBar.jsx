@@ -3,7 +3,9 @@ import MenuIcon from "./MenuIcon";
 import { Link } from "react-router-dom";
 export default function NavBar({ style }) {
   return (
-    <div className={`${style} flex items-center justify-evenly drop-shadow-xl`}>
+    <div
+      className={`${style} flex  items-center justify-evenly drop-shadow-xl`}
+    >
       <Link to="/" className="">
         <MenuIcon text="Home" />
       </Link>

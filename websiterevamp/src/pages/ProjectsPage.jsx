@@ -54,7 +54,6 @@ import SkillSection from "../components/SkillSection.jsx";
 import Footer from "../components/util/Footer.jsx";
 
 export default function ProjectsPage() {
-  const animationRef = useRef();
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(0);
   const handleClose = () => {
@@ -69,22 +68,6 @@ export default function ProjectsPage() {
   useEffect(() => {
     // Add event listener to detect animation end
     window.scrollTo(0, 0);
-
-    const onAnimationEnd = () => {
-      animationRef.current.classList.add("opacity-100");
-    };
-    if (animationRef.current) {
-      animationRef.current.addEventListener("animationend", onAnimationEnd);
-    }
-    // Cleanup: Remove event listener on component unmount
-    return () => {
-      if (animationRef.current) {
-        animationRef.current.removeEventListener(
-          "animationend",
-          onAnimationEnd
-        );
-      }
-    };
   }, []);
 
   return (
