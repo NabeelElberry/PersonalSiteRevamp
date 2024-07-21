@@ -32,15 +32,15 @@ export default function HomePage() {
                       : "animate-slideRightBack opacity-0"
                   }`}
         />
-        <div className="flex flex-col md:flex-row sm:flex-col -z-10 w-full h-full ">
+        <div className="flex flex-col md:flex-row sm:flex-col -z-10  h-full ">
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
-            className="flex h-full grow"
+            className="flex grow"
             to="/about"
           >
             <div
               ref={ref1}
-              className={`flex grow ease-in h-full duration-700 ${
+              className={`flex grow ease-in duration-700 ${
                 isVisible1 ? "animate-shortpacity opacity-100" : "opacity-0"
               }`}
             >
