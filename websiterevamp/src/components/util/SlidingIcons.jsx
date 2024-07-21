@@ -9,6 +9,7 @@ export default function SlidingIcons({ icons }) {
   let iconVariants;
   useEffect(() => {
     if (isInView) {
+      console.log("isInView: ", isInView);
       controls.start("visible");
     }
   }, [controls, isInView]);
@@ -45,15 +46,15 @@ export default function SlidingIcons({ icons }) {
   // }
 
   return (
-    <div className="flex w-full mb-10 mt-10 flex-row  justify-center items-center">
+    <div className="flex w-full mb-10 mt-10 flex-row h-full justify-center items-center">
       <motion.div
         initial="hidden"
         animate={controls}
         ref={ref}
-        className="w-full"
+        className="h-full w-full"
       >
         <div
-          /* lg:grid-cols-6*/ className={`grid grid-cols-4 lg:flex lg:flex-row gap-4`}
+          /* lg:grid-cols-6 lg:flex*/ className={`grid  justify-items-stretch content-center items-center place-items-center  grid-cols-4 lg:grid-cols-6 gap-4`}
         >
           {icons.map((icon, i) => (
             <motion.div

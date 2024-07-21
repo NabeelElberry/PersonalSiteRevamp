@@ -65,7 +65,7 @@ export default function Form() {
         name="name"
         placeholder="Enter your name"
         required
-        autocomplete="off"
+        autoComplete="off"
         className="w-full p-3 mb-4 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
       <textarea
@@ -73,7 +73,7 @@ export default function Form() {
         name="message"
         placeholder="Type your message to Nabeel..."
         required
-        autocomplete="off"
+        autoComplete="off"
         className="w-full p-3 mb-6 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         rows="4"
       ></textarea>

@@ -87,7 +87,7 @@ export default function ProjectsPage() {
         </p>
       </div>
       <Divider />
-      <div className="flex-col flex items-center justify-center space-y-4">
+      <div className="flex-col lg:flex-row flex items-center justify-center content-stretch space-y-4 lg:space-y-0 lg:space-x-4">
         <SkillSection
           title="Languages"
           array={[

@@ -112,7 +112,10 @@ export default function AboutPage() {
                   <strong>V4 Climber</strong>
                 </div>
                 <div>
-                  <strong>Bench Press: </strong> 185lb
+                  <strong>Bench Press: </strong> 185lb (need to retest)
+                </div>
+                <div>
+                  <strong>Pull up max:</strong> 19 clean form (need to retest)
                 </div>
                 <div>
                   <strong>Weighted pull-up:</strong> 65lbs - 5 reps

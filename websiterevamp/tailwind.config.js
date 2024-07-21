@@ -16,10 +16,10 @@ export default {
         '32r': '32rem',
       },
       width: {
-        "comp": "52rem"
+        "comp": "32rem"
       }, 
       height: {
-        "comp": "42rem"
+        "comp": "22rem"
       },
       fontSize: {
         'bigxl': '30rem',

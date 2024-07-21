@@ -4,8 +4,8 @@ export default function SkillSection({ title, array }) {
   return (
     <div
       className="flex flex-col 
-      bg-gradient-to-b bg-gray-800 baby:w-96 w-80 lg:w-fit
-      p-2 lg:p-10 rounded-2xl items-center justify-center"
+      bg-gradient-to-b bg-gray-800 baby:w-96 w-80 lg:w-comp
+      lg:h-comp      p-2 lg:p-10 rounded-2xl  "
     >
       <p className="text-2xl text-white text-center">
         <u>
@@ -13,18 +13,9 @@ export default function SkillSection({ title, array }) {
         </u>
       </p>
 
-      {window.innerWidth > 768 ? (
-        <div
-
-        /*style={{ marginRight: `${marginRight}px` }}*/
-        >
-          <SlidingIcons icons={array} />
-        </div>
-      ) : (
-        <div>
-          <SlidingIcons icons={array} />
-        </div>
-      )}
+      <div className="h-full w-full">
+        <SlidingIcons icons={array} />
+      </div>
     </div>
   );
 }
