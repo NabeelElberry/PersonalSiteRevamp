@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import pfp from "../assets/pfp.jpg";
 import downarrow from "../assets/downarrow.png";
-import { XyzTransition, XyzTransitionGroup } from "@animxyz/react";
-import "@animxyz/core";
 
 export default function ImageOverlay() {
   return (
